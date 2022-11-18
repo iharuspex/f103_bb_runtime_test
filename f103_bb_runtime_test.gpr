@@ -1,0 +1,28 @@
+project F103_BB_Runtime_Test is
+
+   for Languages use ("Ada");
+   for Main use ("main.adb");
+   for Source_Dirs use ("src");
+   for Object_Dir use "obj";
+   --  for Runtime ("ada") use "/home/haruspex/_temp/bb-runtimes/build/zfp-stm32f103c8-hse";
+   for Runtime ("ada") use "/home/haruspex/_temp/bb-runtimes/build/ravenscar-sfp-stm32f103c8-hse";
+   for Target use "arm-eabi";
+
+   package Compiler is
+      for Switches ("Ada") use ("-g", "-gnatwa", "-gnatQ");
+      for Switches ("ada") use ("-gnatQ", "-g", "-gnatwa");
+   end Compiler;
+
+   package Builder is
+      for Switches ("Ada") use ("-g", "-O0");
+   end Builder;
+
+   package Ide is
+      for Connection_Tool use "openocd";
+      for Program_Host use "localhost:4242";
+      for Communication_Protocol use "remote";
+      for Connection_Config_File use "openocd.cfg";
+   end Ide;
+
+end F103_BB_Runtime_Test;
+
