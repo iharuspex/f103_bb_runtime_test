@@ -24,4 +24,5 @@ begin
       Next_Release := Next_Release + Period;
       delay until Next_Release;
    end loop;
+
 end Main;
