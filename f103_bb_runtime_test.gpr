@@ -14,6 +14,7 @@ project F103_BB_Runtime_Test is
    end Compiler;
 
    package Builder is
+      for Executable ("main.adb") use Project'Name & ".elf";
       for Switches ("Ada") use ("-g", "-O0");
    end Builder;
 

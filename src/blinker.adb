@@ -4,7 +4,6 @@ with STM32_SVD.AFIO; use STM32_SVD.AFIO;
 
 package body Blinker is
 
-   
    procedure Initialize;
    
    ----------------
@@ -25,7 +24,9 @@ package body Blinker is
    procedure Initialize is
    begin
       RCC_Periph.APB2ENR.IOPBEN := 1;
-      AFIO_Periph.MAPR.SWJ_CFG := 1;
+      
+      -- Enable Serial wire JTAG configuration
+      AFIO_Periph.MAPR.SWJ_CFG := 2#010#;
       
       GPIOB_Periph.CRL.MODE2 := 1;
       GPIOB_Periph.CRL.CNF2 := 0;

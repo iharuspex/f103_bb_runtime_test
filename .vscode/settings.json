@@ -1,0 +1,7 @@
+{
+    "ada.defaultCharset": "utf-8",
+    "ada.projectFile": "f103_bb_runtime_test.gpr",
+    "ada.useCompletionSnippets": true,
+    "cortex-debug.gdbPath": "/home/haruspex/apps/GNAT/2021-arm-elf/bin/arm-eabi-gdb",
+    "cortex-debug.openocdPath": "/usr/local/bin/openocd",
+}
